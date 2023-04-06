@@ -1,22 +1,40 @@
-let arr = [
-  { std: "Harshini", class: "10th", age: 14 },
-  { std: "Medha", class: "9th", age: 15 },
-  { std: "Arjun", class: "8th", age: 13 },
-  { std: "Adhavan", class: "6th", age: 12 },
+let data = [
+  {
+    studentName: "student001",
+    age: "12",
+    fee: ["1000", "10000", "2000"],
+  },
+
+  {
+    studentName: "student002",
+    age: "12",
+    fee: ["1000", "10000", "2000", "2000"],
+  },
+
+  {
+    studentName: "student003",
+    age: "12",
+    fee: ["1000", "10000", "2000"],
+  },
+  {
+    studentName: "student004",
+    age: "12",
+    fee: ["1000", "10000", "2000", "2000", "30000"],
+  },
+
+  {
+    studentName: "student005",
+    age: "12",
+    fee: ["1000", "2000"],
+  },
 ];
 
-let arr2 = JSON.parse(JSON.stringify(arr));
+const l_arr = data.filter((ele) => {
+  if (ele.fee.length >= 3) {
+    return ele.fee.length >= 3;
+  }
+});
 
-arr[1] = { std: "john", class: "10th", age: 16 };
-arr[0].std = "meghana";
-console.log(arr2);
-console.log(arr);
-console.log(
-  "the changes are made in only the std name in first object and the whole line in second object "
-);
+console.log(l_arr);
 
-arr.map((ele) => console.log(ele.std, ele.class, ele.age));
-console.log(arr.reverse());
-
-// let n = [10, 55, 33, 22, 90];
-// console.log(n.sort());
+data.fee(length - 1);
