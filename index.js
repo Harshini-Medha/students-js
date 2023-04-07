@@ -29,12 +29,21 @@ let data = [
   },
 ];
 
-const l_arr = data.filter((ele) => {
-  if (ele.fee.length >= 3) {
-    return ele.fee.length >= 3;
-  }
+//filter as per the requirement
+const fildata = data.filter((ele) => ele.fee.length >= 3);
+
+//mapping
+const mod = fildata.map((ele) => {
+  //spreading
+  const newdata = { ...ele };
+  //assigning the spreaded (only fee)
+  const feear = newdata.fee;
+  //checking the length and taking index of last element
+  const lastidx = feear.length - 1;
+  //subtract 1000 from the last element of fee of all object l=>3
+  feear[lastidx] = feear[lastidx] - 1000;
+  return newdata;
 });
 
-console.log(l_arr);
-
-data.fee(length - 1);
+//print the data now newly generated
+console.log(mod);
